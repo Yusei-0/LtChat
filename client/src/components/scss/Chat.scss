@@ -1,0 +1,18 @@
+
+$heightPanel : 400px;
+.prueba{
+    background-color: red;
+}
+.chat-panel{
+    padding: 20px;
+    .panel{
+        height: $heightPanel;
+        border-radius: 15px;
+        border: 1px solid rgb(121, 121, 122);
+        background-color: rgb(128, 128, 202);   
+    }
+}
+
+textarea{
+    color: white;
+}
