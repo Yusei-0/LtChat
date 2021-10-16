@@ -1,25 +1,42 @@
 const {Router} = require('express');
 const router = Router();
 const userController = require('./user.controller');
+const CreateUserDto = require('./dto/createUser.dto')
 
-router.get('/users', async (req, res, next)=>{
-    await res.send(userController.getAllUsers());
+/**
+ * In this module we are reciving the request and
+ * sending the response to the controller to response 
+ * from controller 
+ */
+
+router.get('/users', async (req, res)=>{
+    
+    await userController.getAllUsers(res);
 });
 
-router.get('/users/:id', (req, res, next)=>{
-    res.send(userController.getUserById(req.params.id));
+router.get('/users/:id', async (req, res)=>{
+
+   await userController.getUserById(req.params.id, res);
 })
 
-router.post('/users', (req, res, next)=>{
-    res.send(userController.setNewUser(req.body));
+router.post('/users', async (req, res)=>{
+
+    var User = CreateUserDto(req.body);
+     await userController.setNewUser(User, res);
+     
 })
 
-router.delete('/users/:id', (req, res, next)=>{
-    res.send(userController.deleteUserById(req.params.id));
+router.delete('/users/:id', async (req, res)=>{
+
+   await userController.deleteUserById(req.params.id, res);
 })
 
-router.put('users/:id', (req, res, next)=>{
-    res.send(userController.updateUserById(req.params.id, req.body))
+router.put('/users/:id', async (req, res)=>{
+
+    var User = CreateUserDto(req.body);
+  
+    await userController.updateUserById(req.params.id, User, res);
+
 })
 
 module.exports = router;
