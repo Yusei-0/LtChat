@@ -6,8 +6,10 @@
   "scripts": {
     "start": "node index.js",
     "serve": "nodemon index.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run serve\" \"npm run client\""
+    "client": "npm start  --prefix client",
+    "dev": "concurrently \"npm run serve\" \"npm run client\"",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +20,6 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "mongoose": "^6.0.10",
-    "morgan": "^1.10.0",
     "passport": "^0.5.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0",
@@ -26,6 +27,9 @@
   },
   "devDependencies": {
     "concurrently": "^6.3.0",
-    "nodemon": "^2.0.13"
+    "jest": "^27.2.5",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.13",
+    "supertest": "^6.1.6"
   }
 }

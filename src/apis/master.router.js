@@ -2,6 +2,7 @@ const {Router} = require('express');
 const router = Router();
 const userModule = require('./users/user.module');
 
-router.use("/v1", userModule);
+router.use("/users", userModule);
+
 
 module.exports = router;

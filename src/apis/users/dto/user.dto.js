@@ -1,0 +1,9 @@
+
+const UserDto = (resource) => ({
+    username: resource.username,
+    email: resource.email,
+    password: resource.password,
+    picture: resource.picture,
+})
+
+module.exports = UserDto;

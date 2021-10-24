@@ -9,29 +9,29 @@ const CreateUserDto = require('./dto/createUser.dto')
  * from controller 
  */
 
-router.get('/users', async (req, res)=>{
+router.get('/', async (req, res)=>{
     
     await userController.getAllUsers(res);
 });
 
-router.get('/users/:id', async (req, res)=>{
+router.get('/:id', async (req, res)=>{
 
    await userController.getUserById(req.params.id, res);
 })
 
-router.post('/users', async (req, res)=>{
+router.post('/', async (req, res)=>{
 
     var User = CreateUserDto(req.body);
      await userController.setNewUser(User, res);
      
 })
 
-router.delete('/users/:id', async (req, res)=>{
+router.delete('/:id', async (req, res)=>{
 
    await userController.deleteUserById(req.params.id, res);
 })
 
-router.put('/users/:id', async (req, res)=>{
+router.put('/:id', async (req, res)=>{
 
     var User = CreateUserDto(req.body);
   
