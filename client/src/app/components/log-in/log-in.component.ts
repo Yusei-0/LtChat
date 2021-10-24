@@ -8,9 +8,10 @@ import { environment } from "../../../environments/environment";
 })
 export class LogInComponent implements OnInit {
 
- 
-    username: String = ''
-    password: String = ''
+    data = {
+      username: '',
+      password: '',
+    };
     remember: boolean = false
     forget: boolean = false
     submit: boolean = false
@@ -29,11 +30,14 @@ export class LogInComponent implements OnInit {
   }
 
   onSubmit():void {
-    this.submitAnimation();
+    //this.submitAnimation();
+    console.log(this.data);
     
-    this.http.get(`${environment.serverUrl}/users?username=${this.username}`)
-    .subscribe( data =>{
-      this.apidata = data;
-    })  
+    this.http.get(`${environment.serverUrl}/users?username=${this.data.username}`)
+    .subscribe(res =>{
+      console.log(res);
+      
+    })
+       
   }
 }
