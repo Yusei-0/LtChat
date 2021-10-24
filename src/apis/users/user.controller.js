@@ -2,9 +2,9 @@ const userServices = require('./user.service');
 
 var controller = {};
 
-controller.getAllUsers = function(res){
-
-    userServices.getAllUsers((err, users)=>{
+controller.getUsers = function(res, data){
+    if(data){
+    userServices.getUsersByData(data, (err, users)=>{
         if(err){
             console.log(err);
             res.statusCode = 404;
@@ -15,6 +15,19 @@ controller.getAllUsers = function(res){
             res.send(users)
         }
     })
+    }else{
+        userServices.getAllUsers((err, users)=>{
+            if(err){
+                console.log(err);
+                res.statusCode = 404;
+                res.send({
+                    operation : "error"
+                })
+            }else{
+                res.send(users)
+            }
+        })
+    }   
 }
 
 controller.getUserById = function(id, res){
