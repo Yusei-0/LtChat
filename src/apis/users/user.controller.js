@@ -93,25 +93,43 @@ controller.updateUserById = function(id, data, res){
     
 }
 
-controller.logIn = function (res){
-    userServices.getUsersByData(data, (err, user)=>{
+controller.logIn = function (res, data){
 
+    userServices.getUsersByData({username : data.username}, (err, user)=>{
+        
+        console.log(data);
+        
         if(err){
-            console.log(err);
+            console.log("Error");
             res.statusCode = 404;
             res.send({
                 operation : "error"
             })
         }else{
-            if(data.username === user.username)
+            if(user[0]){
+            if(data.password == user[0].password)
             {
-                res.send("OK");
+                console.log(user);
+                res.send({
+                    operation : "OK"
+                });
             }
             else{
-                res.send("WRONG_PASS")
+                console.log(user);
+                res.send({
+                    operation : "WRONG_PASS"
+                })
             }
         }
+        else{
+            res.send({
+                operation : "NO_USER"
+            });
+        }
+
+    }
     })
+
 }
 
 module.exports = controller;

@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const router = Router();
 const userController = require('./user.controller');
-const CreateUserDto = require('./dto/createUser.dto')
+const CreateUserDto = require('./dto/createUser.dto');
 
 /**
  * In this module we are reciving the request and
