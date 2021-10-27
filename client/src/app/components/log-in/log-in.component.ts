@@ -35,7 +35,7 @@ export class LogInComponent implements OnInit {
     //this.submitAnimation();
     //console.log(this.data);
     
-    this.http.get(`${environment.serverUrl}/users/login?username=Yusei-3&password=Zero`)
+    this.http.get(`${environment.serverUrl}/users/login?username=Yusei-3&password=Zero]`)
     .subscribe( res =>{
       console.log(res);
       if(res)
