@@ -6,8 +6,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'/home'},
-  {path:'dashboard', component: DashboardComponent}
+  {path:'dashboard', component: DashboardComponent},
   {path :'home', component: HomeComponent},
   {path :'login', component: LogInComponent},
   {path :'register', component: RegisterComponent}
