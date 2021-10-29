@@ -37,7 +37,7 @@ nav h1{
 }
 
 svg {
-    height: 280px;
+    height: 240px;
     width: 240px;
     display: block;
     margin: 0px auto;
@@ -48,9 +48,10 @@ svg {
     width: 240px;
     color: white;
     display: block;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .articleGetStarted h2{
@@ -59,7 +60,7 @@ svg {
 }
 
 .btn-join{
-    width: 200px;
+    width: 220px;
     height: 45px;
     margin-right: auto;
     margin-left: auto;
@@ -80,11 +81,57 @@ svg {
     color: #117FFF;
 }
 
-/* Comunicated section */
-.comunicated{
-    
+/* Comunicated and Contribute sections */
+.sections{
+    margin-top: 30px;
 }
 
+.sections h2{
+    color: rgb(13, 47, 90);
+    text-align: center;
+    font-weight: 500;
+}
+
+.sections article{
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.sections article p{
+    color: #524343;
+}
+.comunicated svg{
+   display: none;
+}
+.contribute svg{
+    margin-top: 0px;
+    height: 120px;
+    width: 240px;
+}
+.comunicated article{
+    border-bottom: 1px solid ;
+    border-color:  rgb(13, 47, 90);
+}
+.contribute {
+    margin-bottom: 150px;
+}
+.btn-contribute{
+    background-color: rgb(17, 127, 255);
+    text-align: center;
+    border-radius: 8px;
+    display: block;
+    height: 50px;
+    width: 200px;
+    margin: 0px auto;
+    border: 1px solid rgb(17, 127, 255);
+    
+}
+.btn-contribute a{
+    color: white;
+    text-decoration: none;
+    font-size: large;
+}
   
 @media (min-width : 576px){
     nav {
@@ -115,6 +162,12 @@ svg {
         margin-left: auto;
         margin-right: auto;
     }    
+
+    .comunicated svg{
+        margin-top: -30px;
+        padding-left: 40px;
+        display: block;
+    }
 }
 
 @media (min-width: 768px){
